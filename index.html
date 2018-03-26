@@ -75,7 +75,7 @@
         }
         
         .button {
-            background: #76B3FA;
+            background: #e74c3c;
             border-radius: 100px;
             padding: 10px 30px;
             color: #fff;
@@ -124,8 +124,8 @@
 <body>
     <div id="container">
         <div style="width:100%; height:100%">
-            <button onclick="launchApp()" class="button" type="button">Open App</button>
-            <button onclick="downloadApp()" class="button red" type="button">Get The App</button>
+            <button onclick="launchApp()" class="button" type="button">Get The App</button>
+            <!-- <button onclick="downloadApp()" class="button red" type="button">Get The App</button> -->
         </div>
     </div>
 
@@ -140,15 +140,16 @@
             //alert(link);
             window.location = link;
 
-
+            /* Download URL (TUNE link) for new users to download the app */
+            setTimeout("window.location = 'https://itunes.apple.com/app/id1330857258';", 1000);
         }
 
-        function downloadApp() {
-            /* Deep link URL for existing users with app already installed on their device */
-            var link = 'https://itunes.apple.com/app/id1330857258';
-            //alert(link);
-            window.location = link;
-        }
+        // function downloadApp() {
+        //     /* Deep link URL for existing users with app already installed on their device */
+        //     var link = 'https://itunes.apple.com/app/id1330857258';
+        //     //alert(link);
+        //     window.location = link;
+        // }
     </script>
 </body>
 
