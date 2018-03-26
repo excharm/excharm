@@ -105,36 +105,10 @@
 
 
     <script>
-        var url = document.location.href;
-        var stuff = url.split('/?id=');
-        var id = stuff[stuff.length - 1];
-        // 234234234
-        window.onload = function() {
-            /* Deep link URL for existing users with app already installed on their device */
-            var link = 'applinks://excharm.github.io/excharm/?id=' + id;
-            //alert(link);
-            window.location = link;
-
-            /* Download URL (TUNE link) for new users to download the app */
-            setTimeout("window.location = 'https://itunes.apple.com/app/id1330857258';", 1000);
-        }
-    </script>
-</head>
-
-<body>
-    <div id="container">
-        <div style="width:100%; height:100%">
-            <button onclick="launchApp()" class="button" type="button">Get The App</button>
-            <!-- <button onclick="downloadApp()" class="button red" type="button">Get The App</button> -->
-        </div>
-    </div>
-
-    <script>
-        var url = document.location.href;
-        var stuff = url.split('/?id=');
-        var id = stuff[stuff.length - 1];
-        // 234234234
         function launchApp() {
+            var url = document.location.href;
+            var stuff = url.split('/?id=');
+            var id = stuff[stuff.length - 1];
             /* Deep link URL for existing users with app already installed on their device */
             var link = 'applinks://excharm.github.io/excharm/?id=' + id;
             //alert(link);
@@ -150,7 +124,20 @@
             //alert(link);
             window.location = link;
         }
+
+        launchApp()
     </script>
+
+</head>
+
+<body>
+    <div id="container">
+        <div style="width:100%; height:100%">
+            <button onclick="launchApp()" class="button" type="button">Get The App</button>
+            <!-- <button onclick="downloadApp()" class="button red" type="button">Get The App</button> -->
+        </div>
+    </div>
+
 </body>
 
 </html>
