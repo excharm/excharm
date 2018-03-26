@@ -5,13 +5,16 @@
     <title>Excharm</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+
     <meta property="og:title" content="Excharm" />
-    <meta property="og:type" content="Application" />
+    <meta property="og:type" content="website" />
+
     <meta property="og:description" content="A great social app connect you to the nails industry network 
     Nails supplies shop with variety of product just one tap away" />
     <meta property="og:image" content="/excharm/logo.png" />
     <link rel="apple-touch-icon" href="/excharm/logo.png">
 
+    <meta property="al:ios:url" content="applinks://excharm.github.io/excharm/" />
     <meta property="al:ios:app_store_id" content="1330857258" />
     <meta property="al:ios:app_name" content="Excharm" />
 
@@ -20,10 +23,15 @@
     <meta name="twitter:app:name:iphone" content="Excharm">
     <meta name="twitter:app:id:iphone" content="1330857258">
 
+
+
     <script>
+        var url = document.location.href;
+        var stuff = url.split('/?id=');
+        var id = stuff[stuff.length - 1];
         document.writeln('<meta property="og:url" content="' + document.location.href + '"/>');
         document.writeln('<meta name="apple-itunes-app" content="app-id=1330857258, app-argument=' + document.location.href + '"/>');
-        document.writeln('<meta property="al:ios:url" content="' + document.location.href + '"/>');
+        document.writeln('<meta property="al:ios:url" content="applinks://excharm.github.io/excharm/?id=' + id + '"/>');
         document.writeln('<meta name="twitter:app:url:iphone" content="' + document.location.href + '"/>');
     </script>
     <style>
