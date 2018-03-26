@@ -105,25 +105,51 @@
 
 
     <script>
+        var timeout;
+
+        function preventPopup() {
+            clearTimeout(timeout);
+            timeout = null;
+            window.removeEventListener('pagehide', preventPopup);
+        }
+
         function launchApp() {
             var url = document.location.href;
             var stuff = url.split('/?id=');
             var id = stuff[stuff.length - 1];
             /* Deep link URL for existing users with app already installed on their device */
             var link = 'applinks://excharm.github.io/excharm/?id=' + id;
-            //alert(link);
-            window.location = link;
 
-            /* Download URL (TUNE link) for new users to download the app */
-            setTimeout("window.location = 'https://itunes.apple.com/app/id1330857258';", 1000);
+            $('<iframe />')
+                .attr('src', link)
+                .attr('style', 'display:none;')
+                .appendTo('body');
+
+            timeout = setTimeout(function() {
+                document.location = 'https://itunes.apple.com/app/id1330857258';
+            }, 500);
+            window.addEventListener('pagehide', preventPopup);
         }
 
-        function downloadApp() {
-            /* Deep link URL for existing users with app already installed on their device */
-            var link = 'https://itunes.apple.com/app/id1330857258';
-            //alert(link);
-            window.location = link;
-        }
+        // function launchApp() {
+        //     var url = document.location.href;
+        //     var stuff = url.split('/?id=');
+        //     var id = stuff[stuff.length - 1];
+        //     /* Deep link URL for existing users with app already installed on their device */
+        //     var link = 'applinks://excharm.github.io/excharm/?id=' + id;
+        //     //alert(link);
+        //     window.location = link;
+
+        //     /* Download URL (TUNE link) for new users to download the app */
+        //     setTimeout("window.location = 'https://itunes.apple.com/app/id1330857258';", 1000);
+        // }
+
+        // function downloadApp() {
+        //     /* Deep link URL for existing users with app already installed on their device */
+        //     var link = 'https://itunes.apple.com/app/id1330857258';
+        //     //alert(link);
+        //     window.location = link;
+        // }
 
         launchApp()
     </script>
