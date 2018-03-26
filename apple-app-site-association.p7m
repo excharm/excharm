@@ -1,9 +1,14 @@
 {
     "applinks": {
         "apps": [],
-        "details": [{
-            "appID": "JXV5XJTQ6J.hr.apps.nailsjobs",
-            "paths": ["*"]
-        }]
+        "details": [
+            {
+                "appID": "JXV5XJTQ6J.hr.apps.nailsjobs",
+                "paths": [ "*" ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": ["JXV5XJTQ6J.hr.apps.nailsjobs"]
     }
 }
